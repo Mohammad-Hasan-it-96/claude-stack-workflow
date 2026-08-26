@@ -43,9 +43,10 @@ Tell it the domain, the ports, and the database name. It returns a file list.
 
 ## Step 3 - write the deploy runbook yourself
 
-`_project/deploy.md`, short and copy-pasteable:
+Append a `## Deploy` section to the project's own `README.md` - the file the
+user will actually open in six months. Short and copy-pasteable:
 
-- VPS size that fits the expected volume from `spec.md`
+- VPS size that fits the expected volume from `PROJECT.md`
 - the exact commands, in order, from a fresh Ubuntu box
 - how to get HTTPS (certbot), and how it renews
 - how to restore a backup - untested backups are not backups
@@ -54,14 +55,15 @@ Tell it the domain, the ports, and the database name. It returns a file list.
 
 ## Step 4 - write the client handover document
 
-`_project/handover.md`, in the client's language, no technical words:
+`handover.md`, in the client's language, no technical words. This is one of the
+only two files this workflow writes for a human outside the project:
 
 - how to log in, and the admin account
 - how to add a user and change a role
 - the daily tasks, with the screen name for each
 - what to do when something looks wrong, and how to reach you
 - what is covered by the free support period and what is not
-- what is out of scope, copied from `spec.md`
+- what is out of scope, copied from the Out of scope section of `PROJECT.md`
 
 This document ends most support calls before they happen.
 

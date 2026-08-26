@@ -10,8 +10,8 @@ Review `$1`. With no argument or with `--diff`, review the uncommitted changes.
 
 Read first: `${CLAUDE_PLUGIN_ROOT}/rules/model-policy.md`
 
-This command writes nothing outside `_project/`. It does not fix anything - the
-user decides what to fix.
+This command writes no files at all. The report goes in the chat. It does not
+fix anything - the user decides what to fix.
 
 ## Step 1 - define the target, cheaply
 
@@ -33,7 +33,7 @@ If the target is a feature name, list its files with Glob instead.
 They are independent and read-only, so they run at the same time.
 
 Give each the same short prompt: the file list, the feature name, and the role
-matrix rows from `spec.md` that apply. Nothing else.
+matrix rows from `PROJECT.md` that apply. Nothing else.
 
 ## Step 3 - verify before reporting
 
@@ -66,8 +66,6 @@ REVIEW - trips feature
 
 Verified 3 of 6 agent findings. 3 dropped as not real.
 ```
-
-Write the same list to `_project/review-<n>.md`.
 
 If nothing survived verification, say exactly: `No real findings.` Do not pad
 the report to look thorough.

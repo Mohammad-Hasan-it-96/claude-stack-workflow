@@ -18,9 +18,9 @@ user run the command again.
 
 ## Step 1 - get only what you need
 
-Grep `_project/plan.md` for the feature block for `$1` and read **only** that
+Grep `PROJECT.md` for the feature block for `$1` and read **only** that
 block, plus the lines around it. Do not read the whole plan. Do not read
-`spec.md` unless the plan block references an `AC` whose text you actually need.
+the rest of `PROJECT.md` unless the feature block references an `AC` you need.
 
 If there is no block for `$1`, stop and say so. Building a feature that is not
 in the plan is unbilled work.
@@ -70,8 +70,8 @@ Never read a whole generated file. Never re-run the agent for a small fix.
 
 ## Step 5 - close out
 
-Update `_project/state.md`: move `$1` from `features_todo` to `features_done`.
-One edit to the front-matter, nothing else in the file.
+In `PROJECT.md` front-matter, set this feature's `status: done`. One edit to
+that one line. Touch nothing else in the file.
 
 ## Report
 
@@ -82,12 +82,12 @@ FEATURE $1 - done
 Covers: REQ-4, REQ-5
 Files: 11 written, 2 edited
 Checks: tsc pass, 6 tests pass, page works
-Next: /stack:feature <next from features_todo>
+Next: /stack:feature <next feature with status: todo>
 ```
 
 If the feature revealed something the spec got wrong, say it in one line and add
-it to `_project/change-requests.md` with a day estimate. Do not silently absorb
-extra scope.
+one row to the `Changes after approval` table in `PROJECT.md` with a day
+estimate. One row, not a document. Do not silently absorb extra scope.
 
 ## Teaching note
 

@@ -16,9 +16,12 @@ Read first:
 
 ## Gate
 
-Blocked while `approved_by_client: false`. Say once, in one sentence, that
-building before written approval is how unpaid work happens. If the user
-confirms, proceed and do not mention it again.
+If `PROJECT.md` has `approved: false`, say **one line**:
+
+> Client has not approved in writing yet. Continue anyway?
+
+Accept either answer and act on it. Never raise it again in this project. It is
+a reminder, not a gate.
 
 ## How this command spends tokens
 
@@ -31,7 +34,7 @@ output is a file list, not code, so generated files never enter this context.
 Write these decisions down in your prompt to the agents. They will not ask.
 
 - Project name, database name, ports
-- Roles enum (from `spec.md` role matrix)
+- Roles enum (from the PROJECT.md role matrix)
 - Is the UI Arabic / RTL?
 - The one seeded admin user
 - Which example feature the users module demonstrates
@@ -133,7 +136,7 @@ the seeded admin.
 
 ## Step 4 - close out
 
-Set `stage: feature` in `_project/state.md`.
+Set `stage: build` in `PROJECT.md`.
 
 End your message with two or three sentences about **one** pattern that has no
 Laravel equivalent - `asyncHandler`, the axios interceptor, or npm workspaces.
@@ -141,4 +144,4 @@ One concept only. Do not turn a build into a lecture.
 
 ## Next step
 
-Run `/stack:feature <first feature from plan.md>`.
+Run `/stack:feature <first feature with status: todo>`.

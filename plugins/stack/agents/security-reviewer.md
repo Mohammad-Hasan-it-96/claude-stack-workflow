@@ -20,7 +20,7 @@ attacks that do not apply to a dashboard behind a login.
    to their office. Test every `:id` route: can user A pass user B's id?
 
 2. **Missing role check.** A route that any authenticated user can call but only
-   an admin should. Compare against the role matrix in `_project/spec.md`.
+   an admin should. Compare against the role matrix in `PROJECT.md`.
 
 3. **Unvalidated input.** `req.body`, `req.query`, or `req.params` used before a
    Zod parse. Check every controller.

@@ -10,17 +10,16 @@ model in a subagent. Never let generated code enter the main context.**
 
 ## Model per stage
 
-| Stage | Runs where | Model | Effort | Why |
+| Command | Runs where | Model | Effort | Why |
 |---|---|---|---|---|
-| intake | main thread | inherit | medium | A conversation. Almost no file reading. Cheap already. |
-| spec | main thread | inherit | high | Highest-value thinking in the whole project. Do not economise here. |
-| estimate | main thread | inherit | medium | Text only. |
-| plan | main thread | inherit | high | Every later cost is decided here. |
-| scaffold | 4 parallel `codegen` agents | haiku | low | Pure boilerplate from a known template. No judgement needed. |
-| feature | 1 `feature-builder` agent | sonnet | medium | Needs judgement, but the pattern is already fixed by the scaffold. |
-| review | parallel reviewer agents | sonnet / inherit | high | Read-only, returns a short findings list. |
-| ship | 1 `codegen` agent | haiku | low | Dockerfile, compose, nginx, env. Fully mechanical. |
-| explain | main thread | inherit | low | Short answer, no file writing. |
+| `/stack:scope` | main thread | inherit | high | Highest-value thinking in the project. Every later cost is decided here. Do not economise. |
+| `/stack:proposal` | main thread | inherit | medium | Text only, and a client reads it. |
+| `/stack:scaffold` | 4 parallel `codegen` agents | haiku | low | Pure boilerplate from a known template. No judgement needed. |
+| `/stack:feature` | 1 `feature-builder` agent | sonnet | medium | Needs judgement, but the pattern is already fixed by the scaffold. |
+| `/stack:review` | 2 parallel reviewer agents | sonnet / inherit | high | Read-only, returns a short findings list. |
+| `/stack:ship` | 1 `codegen` agent | haiku | low | Dockerfile, compose, nginx, scripts. Fully mechanical. |
+| `/stack:status` | main thread | inherit | low | Reads ten lines of front-matter. |
+| `/stack:explain` | main thread | inherit | low | Short answer, no file writing. |
 
 ## Context discipline - this saves more than model choice
 
@@ -31,7 +30,7 @@ model in a subagent. Never let generated code enter the main context.**
    returns a list of file paths and a one-line summary. Nothing else. If it
    returns code, the token saving is gone.
 
-3. **Read sections, not files.** Once `spec.md` is long, pull the one feature
+3. **Read sections, not files.** Once `PROJECT.md` is long, pull the one feature
    block you need with Grep and a line range. Do not read the whole spec for
    every feature.
 

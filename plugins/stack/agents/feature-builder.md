@@ -14,7 +14,7 @@ working scaffold.
 
 - `${CLAUDE_PLUGIN_ROOT}/rules/conventions.md`
 - `${CLAUDE_PLUGIN_ROOT}/rules/stack.md`
-- the feature block your caller gave you from `_project/plan.md`
+- the feature block your caller gave you from `PROJECT.md`
 
 Then read **one existing feature** in the repo as your pattern - usually
 `apps/api/src/modules/users/` and `apps/web/src/features/users/`. Copy its

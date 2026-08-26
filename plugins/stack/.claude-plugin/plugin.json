@@ -1,7 +1,7 @@
 {
   "name": "stack",
   "description": "Senior PM + senior full-stack developer for JavaScript business systems. Stages: intake -> spec -> estimate -> plan -> scaffold -> feature -> review -> ship. Opinionated stack: Express + Prisma + PostgreSQL on the backend, React + Vite + TanStack Query on the frontend, TypeScript everywhere, shared Zod schemas.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "Mohammad Hasan",
     "email": "Mohammad.hasan.it.96@Outlook.com"

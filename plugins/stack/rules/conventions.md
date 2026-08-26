@@ -119,7 +119,7 @@ export type CreateTripInput = z.infer<typeof CreateTripInput>
 
 - Never trust `req.body`. Zod-parse before use, every time.
 - Never build SQL by string concatenation. Prisma only. Using `$queryRaw`
-  requires an explicit note in plan.md saying why.
+  requires an explicit note in the PROJECT.md Decisions table saying why.
 - Hash passwords with bcrypt, cost 12.
 - Keep the JWT secret in `.env`. Never commit `.env`. Always ship `.env.example`.
 - Check ownership, not just login. "Is this user authenticated?" is a different

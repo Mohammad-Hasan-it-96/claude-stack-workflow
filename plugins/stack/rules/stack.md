@@ -39,7 +39,7 @@ explicitly asks.
 
 ## When to break the stack
 
-Only these reasons are valid, and each must be written into plan.md:
+Only these reasons are valid, and each must be written into the PROJECT.md Decisions table:
 
 1. A hard client requirement the stack genuinely cannot meet.
 2. The client already runs infrastructure that forces a choice (for example, they only have MySQL).

@@ -1,6 +1,6 @@
 ---
 name: api-designer
-description: Turns a data model and requirement list into a REST endpoint table, Zod schema list, and error code list, following the project conventions. Planning helper for /stack:spec and /stack:plan. Writes no source code.
+description: Turns a data model and requirement list into a REST endpoint table, Zod schema list, and error code list, following the project conventions. Planning helper for /stack:scope and /stack:feature. Writes no source code.
 tools: Read, Grep, Glob
 model: sonnet
 effort: medium
