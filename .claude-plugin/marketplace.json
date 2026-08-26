@@ -1,0 +1,19 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "stack-workflow",
+  "description": "A senior project manager and senior full-stack developer for JavaScript business systems.",
+  "owner": {
+    "name": "Mohammad Hasan",
+    "email": "Mohammad.hasan.it.96@Outlook.com"
+  },
+  "plugins": [
+    {
+      "name": "stack",
+      "source": "./plugins/stack",
+      "version": "0.1.0",
+      "description": "Turns a client conversation into a specced, estimated, and built full-stack TypeScript system (Express + Prisma + React + Vite). Includes a PM side (intake, spec, estimate) and a developer side (plan, scaffold, feature, review, ship), plus a Laravel-to-Node translation guide.",
+      "category": "workflow",
+      "tags": ["workflow", "fullstack", "typescript", "express", "prisma", "react", "freelance"]
+    }
+  ]
+}
