@@ -29,6 +29,22 @@ You make the decisions in this thread. You do **not** write the boilerplate
 yourself. Four `codegen` agents on the cheap model write it in parallel. Their
 output is a file list, not code, so generated files never enter this context.
 
+## API-only mode
+
+If the user asks for the backend only - "just the API", "backend first", "no
+frontend yet" - skip **Agent D** and everything under `apps/web`. Create the
+full monorepo shape anyway: `apps/`, `packages/shared/`, root `package.json`
+with workspaces, and the Vite proxy target reserved in the README.
+
+This costs nothing now and means adding the web app later is one `/stack:feature`
+run, not a restructure. Never create a flat `src/` backend repo - moving to a
+monorepo afterwards means rewriting every import path and both Docker files.
+
+In API-only mode:
+- verify with `npm run dev -w apps/api` and a real request, not a browser
+- test the login endpoint with `curl` or a `.http` file and show the response
+- set `stage: build` as normal
+
 ## Step 1 - decide, in this thread, before spawning anything
 
 Write these decisions down in your prompt to the agents. They will not ask.
